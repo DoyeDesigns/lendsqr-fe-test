@@ -1,3 +1,5 @@
+import './stylesheet/global.min.css';
+
 export default function RootLayout({
   children,
 }: {
