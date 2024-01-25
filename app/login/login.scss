@@ -1,0 +1,161 @@
+@font-face {
+  font-family: "Avenir-next";
+  src: url("/public/fonts/Avenir\ Next/") format("truetype");
+  /* Adjust the file extension as needed */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin color-with-opacity($base-color, $opacity) {
+  $rgba-color: rgba($base-color, $opacity);
+
+  background-color: $rgba-color;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// variables
+$text-primary: #213f7d;
+$text-secondary: #545f7d;
+$input-border: 2px solid #e5e7eb;
+$accent-color: #39cdcc;
+
+#main {
+  font-family: "Avenir-next", sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 704px;
+  height: 100vh;
+}
+
+#image-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: left;
+}
+
+#logo {
+  margin-top: 106px;
+  margin-left: 97px;
+  margin-bottom: 139px;
+}
+
+.illustration {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 447px;
+}
+
+#form-container {
+  display: flex;
+  padding-left: 100px;
+  background-color: #ffffff;
+  height: 100%;
+  box-shadow: 0px 15px 90px 0px rgba(0, 0, 0, 0.03);
+}
+
+#form-container {
+  h1 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 54.64px;
+    margin-top: 220px;
+    margin-bottom: 10px;
+    color: $text-primary;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27.32px;
+    margin-bottom: 60px;
+    color: $text-secondary;
+  }
+
+  #email {
+    margin-bottom: 24px;
+    padding-top: 17.5px;
+    padding-bottom: 12.5px;
+    border: $input-border;
+  }
+
+  #password {
+    padding-top: 17px;
+    padding-bottom: 18.83px;
+    width: 100%;
+  }
+
+  input {
+    padding-left: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.12px;
+    border-radius: 5px;
+    height: 50px;
+    border: none;
+    color: $text-secondary;
+  }
+
+  .password-input {
+    position: relative;
+    border: $input-border;
+    border-radius: 5px;
+  }
+
+  .show-password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 17.6px;
+    color: $accent-color;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding-top: 1px;
+  }
+
+  #forgot-password-link {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16.39px;
+    margin-top: 24px;
+    margin-bottom: 30px;
+    letter-spacing: 0.1em;
+    color: $accent-color;
+    text-decoration: none;
+  }
+
+  button {
+    font-size: 14px;
+    line-height: 19.12px;
+    letter-spacing: 0.1em;
+    padding-top: 15px;
+    padding-bottom: 13px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: $accent-color;
+
+    &:hover {
+      @include color-with-opacity($accent-color, 0.7);
+    }
+  }
+}

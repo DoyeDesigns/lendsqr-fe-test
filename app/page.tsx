@@ -1,7 +1,13 @@
+import LoginPage from "./login/page";
+
 export const metadata = {
-  title: "App Router",
+  title: "login",
 };
 
-export default function Page() {
-  return <h1>App Router</h1>;
+export default function Home() {
+  return (
+    <main>
+      <LoginPage />
+    </main>
+  );
 }
