@@ -13,7 +13,7 @@ const authenticateUser = (e: { preventDefault: () => void }) => {
   console.log("User authenticated");
 };
 
-export default function LoginFom() {
+export default function LoginForm() {
   const [userEmail, setUserEmail] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [userPassword, setUserPassword] = useState("");
@@ -23,8 +23,8 @@ export default function LoginFom() {
   };
 
   return (
-    <div id="form-container">
-      <div >
+    <div className="form-section">
+      <div className="form-container">
         <h1>Welcome!</h1>
         <p>Enter details to login.</p>
 
