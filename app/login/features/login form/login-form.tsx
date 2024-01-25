@@ -24,7 +24,7 @@ export default function LoginFom() {
 
   return (
     <div id="form-container">
-      <div>
+      <div >
         <h1>Welcome!</h1>
         <p>Enter details to login.</p>
 

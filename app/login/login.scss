@@ -6,12 +6,6 @@
   font-style: normal;
 }
 
-@mixin color-with-opacity($base-color, $opacity) {
-  $rgba-color: rgba($base-color, $opacity);
-
-  background-color: $rgba-color;
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -24,17 +18,50 @@ $text-secondary: #545f7d;
 $input-border: 2px solid #e5e7eb;
 $accent-color: #39cdcc;
 
+$breakpoints: (
+  small: 576px,
+  medium: 768px,
+  large: 992px,
+  extra-large: 1200px,
+);
+
+// mixins
+@mixin color-with-opacity($base-color, $opacity) {
+  $rgba-color: rgba($base-color, $opacity);
+
+  background-color: $rgba-color;
+}
+
+// ---media breakpoints---
+@mixin media-breakpoint-above($breakpoint) {
+  @media (min-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-below($breakpoint) {
+  @media (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+
 #main {
   font-family: "Avenir-next", sans-serif;
-  display: grid;
-  grid-template-columns: 1fr 704px;
+  display: flex;
+  // grid-template-columns: 1fr 704px;
+  justify-content: center;
   height: 100vh;
+  // width: ;
 }
 
 #image-container {
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
+  @include media-breakpoint-below(large) {
+    display: none;
+  }
 }
 
 .logo-container {
@@ -57,6 +84,11 @@ form {
   display: flex;
   flex-direction: column;
   width: 447px;
+  min-width: 200px;
+
+  @include media-breakpoint-below(small) {
+    width: 270px;
+  }
 }
 
 #form-container {
@@ -65,24 +97,31 @@ form {
   background-color: #ffffff;
   height: 100%;
   box-shadow: 0px 15px 90px 0px rgba(0, 0, 0, 0.03);
-}
 
-#form-container {
   h1 {
     font-weight: 700;
     font-size: 40px;
-    line-height: 54.64px;
+    line-height: normal; 
     margin-top: 220px;
     margin-bottom: 10px;
     color: $text-primary;
+
+    @include media-breakpoint-below(large) {
+      margin-top: 110px;
+      text-align: center;
+    }
   }
 
   p {
     font-weight: 400;
     font-size: 20px;
-    line-height: 27.32px;
+    line-height: normal; 
     margin-bottom: 60px;
     color: $text-secondary;
+
+    @include media-breakpoint-below(large) {
+      text-align: center;
+    }
   }
 
   #email {
@@ -102,7 +141,7 @@ form {
     padding-left: 16px;
     font-size: 14px;
     font-weight: 400;
-    line-height: 19.12px;
+    line-height: normal; 
     border-radius: 5px;
     height: 50px;
     border: none;
@@ -134,7 +173,6 @@ form {
   #forgot-password-link {
     font-weight: 600;
     font-size: 12px;
-    line-height: 16.39px;
     margin-top: 24px;
     margin-bottom: 30px;
     letter-spacing: 0.1em;
@@ -144,7 +182,6 @@ form {
 
   button {
     font-size: 14px;
-    line-height: 19.12px;
     letter-spacing: 0.1em;
     padding-top: 15px;
     padding-bottom: 13px;
@@ -157,5 +194,11 @@ form {
     &:hover {
       @include color-with-opacity($accent-color, 0.7);
     }
+  }
+
+  @include media-breakpoint-below(large) {
+    width: 100vw;
+    justify-content: center;
+    padding-left: 0px;
   }
 }
