@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700&display=swap");
+@font-face {
+  font-family: "Avenir-next";
+  src: url("/public/fonts/Avenir Next/") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  background: #FFF;
+  box-shadow: 3px 0px 20px 0px rgba(0, 0, 0, 0.04);
+}
+#navbar #logo {
+  margin-left: 30px;
+  margin-right: 168.2px;
+}
+@media (max-width: 992px) {
+  #navbar #logo {
+    margin-right: 70px;
+  }
+}
+@media (max-width: 768px) {
+  #navbar #logo {
+    margin-right: 0px;
+  }
+}
+#navbar > :first-child {
+  display: flex;
+}
+#navbar form {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  align-items: center;
+  position: relative;
+}
+@media (max-width: 768px) {
+  #navbar form {
+    display: none;
+  }
+}
+#navbar form > button {
+  width: 56px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: none;
+  background-color: #39cdcc;
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 47px;
+}
+@media (max-width: 992px) {
+  #navbar form > button {
+    right: 20.42px;
+  }
+}
+#navbar input {
+  color: rgba(84, 95, 125, 0.7);
+  font-size: 14px;
+  font-weight: 400;
+  height: 40px;
+  width: 400px;
+  padding-left: 20px;
+  border: 1px solid rgba(33, 63, 125, 0.2);
+  border-radius: 8px;
+  font-family: "Work Sans", sans-serif;
+}
+@media (max-width: 992px) {
+  #navbar input {
+    width: 250px;
+  }
+}
+#navbar > :nth-child(2) {
+  display: flex;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  margin-right: 60px;
+}
+@media (max-width: 992px) {
+  #navbar > :nth-child(2) {
+    margin-right: 30px;
+  }
+}
+#navbar > :nth-child(2) button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: #213f7d;
+  font-family: "Work Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: 10px;
+  cursor: pointer;
+}
+#navbar > :nth-child(2) .doc-link {
+  margin-right: 47px;
+  color: #213f7d;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+@media (max-width: 992px) {
+  #navbar > :nth-child(2) .doc-link {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  #navbar > :nth-child(2) .notification-bell {
+    display: none;
+  }
+}
+#navbar > :nth-child(2) .profile-pic {
+  border-radius: 50%;
+  contain: content;
+  margin-left: 30px;
+}/*# sourceMappingURL=navbar.min.css.map */

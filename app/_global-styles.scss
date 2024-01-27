@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700&display=swap');
+
+@font-face {
+    font-family: "Avenir-next";
+    src: url("/public/fonts/Avenir\ Next/") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  // variables
+  $text-primary: #213f7d;
+  $text-secondary: #545f7d;
+  $input-border: 2px solid #e5e7eb;
+  $accent-color: #39cdcc;
+  
+  $breakpoints: (
+    small: 576px,
+    medium: 768px,
+    large: 992px,
+    extra-large: 1200px,
+  );
+  
+  // mixins
+  @mixin color-with-opacity($base-color, $opacity) {
+    $rgba-color: rgba($base-color, $opacity);
+  
+    background-color: $rgba-color;
+  }
+
+  @mixin border-with-opacity($base-color, $opacity) {
+    $rgba-color: rgba($base-color, $opacity);
+  
+    border: 1px solid $rgba-color;
+  }
+
+  @mixin text-with-opacity($base-color, $opacity) {
+    $rgba-color: rgba($base-color, $opacity);
+  
+    color: $rgba-color;
+  }
+  
+  // ---media breakpoints---
+  @mixin media-breakpoint-above($breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+  
+  @mixin media-breakpoint-below($breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }

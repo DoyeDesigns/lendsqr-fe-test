@@ -1,50 +1,4 @@
-@font-face {
-  font-family: "Avenir-next";
-  src: url("/public/fonts/Avenir\ Next/") format("truetype");
-  /* Adjust the file extension as needed */
-  font-weight: normal;
-  font-style: normal;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-// variables
-$text-primary: #213f7d;
-$text-secondary: #545f7d;
-$input-border: 2px solid #e5e7eb;
-$accent-color: #39cdcc;
-
-$breakpoints: (
-  small: 576px,
-  medium: 768px,
-  large: 992px,
-  extra-large: 1200px,
-);
-
-// mixins
-@mixin color-with-opacity($base-color, $opacity) {
-  $rgba-color: rgba($base-color, $opacity);
-
-  background-color: $rgba-color;
-}
-
-// ---media breakpoints---
-@mixin media-breakpoint-above($breakpoint) {
-  @media (min-width: map-get($breakpoints, $breakpoint)) {
-    @content;
-  }
-}
-
-@mixin media-breakpoint-below($breakpoint) {
-  @media (max-width: map-get($breakpoints, $breakpoint)) {
-    @content;
-  }
-}
-
+@import './global-styles';
 
 #main {
   font-family: "Avenir-next", sans-serif;
@@ -58,6 +12,7 @@ $breakpoints: (
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
+  width: 736px;
   @include media-breakpoint-below(large) {
     display: none;
   }
@@ -92,17 +47,23 @@ form {
 }
 
 .form-section {
+  width: 100%;
   height: 100%;
-  width: 704px;
-  box-shadow: 0px 15px 90px 0px rgba(0, 0, 0, 0.03);
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
-  margin-left: 100px;
-  background-color: #ffffff;
+  padding-left: 100px;
+  background-color: #fff;
   height: 100%;
+  width: 100%;
+  box-shadow: 0px 15px 90px 0px rgba(0, 0, 0, 0.03);
+  @include media-breakpoint-below(large) {
+    width: 100vw;
+    justify-content: center;
+    padding-left: 0px;
+  }
 
   h1 {
     font-weight: 700;
@@ -200,11 +161,5 @@ form {
     &:hover {
       @include color-with-opacity($accent-color, 0.7);
     }
-  }
-
-  @include media-breakpoint-below(large) {
-    width: 100vw;
-    justify-content: center;
-    margin-left: 0px;
   }
 }
