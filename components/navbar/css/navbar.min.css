@@ -12,6 +12,10 @@
   box-sizing: border-box;
 }
 
+.dashboard-layout {
+  display: flex;
+}
+
 #navbar {
   display: flex;
   justify-content: space-between;
@@ -56,16 +60,11 @@
   border: none;
   background-color: #39cdcc;
   cursor: pointer;
+  right: 0;
   height: 100%;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 47px;
-}
-@media (max-width: 992px) {
-  #navbar form > button {
-    right: 20.42px;
-  }
 }
 #navbar input {
   color: rgba(84, 95, 125, 0.7);
@@ -102,7 +101,7 @@
   background: none;
   border: none;
   color: #213f7d;
-  font-family: "Work Sans";
+  font-family: "Work Sans", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;

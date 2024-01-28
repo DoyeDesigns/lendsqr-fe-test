@@ -12,6 +12,10 @@
   box-sizing: border-box;
 }
 
+.dashboard-layout {
+  display: flex;
+}
+
 #main {
   font-family: "Avenir-next", sans-serif;
   display: flex;

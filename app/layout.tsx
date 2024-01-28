@@ -1,3 +1,6 @@
+import { Suspense } from 'react'
+import { NavigationEvents } from '@/components/navigation-events' 
+
 export default function RootLayout({
     children,
   }: {
@@ -5,7 +8,13 @@ export default function RootLayout({
   }) {
     return (
       <html lang="en">
-        <body>{children}</body>
+        <body>
+          {children}
+
+          <Suspense fallback={null}>
+          <NavigationEvents />
+        </Suspense>
+        </body>
       </html>
     )
   }
