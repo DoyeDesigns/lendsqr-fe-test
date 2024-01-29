@@ -22,10 +22,15 @@
   $accent-color: #39cdcc;
   
   $breakpoints: (
+    extra-small: 280px,
     small: 576px,
     medium: 768px,
     large: 992px,
     extra-large: 1200px,
+    extra-large-xl: 1450px,
+
+    custom-heading: 1302px,
+
   );
   
   // mixins
@@ -46,6 +51,22 @@
   
     color: $rgba-color;
   }
+
+  @mixin responsive-grid($min-width: 320px, $gap: 20px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); // Define your minimum width
+    grid-gap: $gap;
+  
+    @media (min-width: $min-width) {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); // Define your minimum width
+    }
+  }
+  
+  // Usage example
+  .container {
+    @include responsive-grid(768px, 20px); // Adjust as needed
+  }
+  
   
   // ---media breakpoints---
   @mixin media-breakpoint-above($breakpoint) {

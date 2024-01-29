@@ -112,6 +112,9 @@
             border-radius: 50%;
             contain: content;
             margin-left: 30px;
+            @include media-breakpoint-below(extra-small) {
+                display: none;
+              }
         }
     }
 }

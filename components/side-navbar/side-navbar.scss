@@ -15,6 +15,10 @@ aside {
         display: none;
     }
 
+    @include media-breakpoint-above(extra-large-xl) {
+        width: 30%;
+    }
+
     > :first-child {
         border: none;
         background: none;
@@ -27,7 +31,6 @@ aside {
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-
     }
 
     .active-link {

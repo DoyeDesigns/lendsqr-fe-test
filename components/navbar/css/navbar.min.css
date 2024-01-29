@@ -12,6 +12,17 @@
   box-sizing: border-box;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 20px;
+}
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
 .dashboard-layout {
   display: flex;
 }
@@ -132,4 +143,9 @@
   border-radius: 50%;
   contain: content;
   margin-left: 30px;
+}
+@media (max-width: 280px) {
+  #navbar > :nth-child(2) .profile-pic {
+    display: none;
+  }
 }/*# sourceMappingURL=navbar.min.css.map */
